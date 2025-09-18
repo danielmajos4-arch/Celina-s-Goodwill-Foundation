@@ -177,41 +177,6 @@ export default function PartnershipSection() {
           </div>
         ))}
 
-        {/* Contact Information */}
-        <div className="mt-16 bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Let's Start the Conversation</h3>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Have questions about partnership opportunities? We'd love to hear from you and explore how we can work together.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-colors">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-lg font-semibold mb-2">Email Us</h4>
-              <p className="text-gray-400">partnerships@celinasgoodwill.org</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-colors">
-                <Phone className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-lg font-semibold mb-2">Call Us</h4>
-              <p className="text-gray-400">+234 (0) 123 456 7890</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-colors">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-lg font-semibold mb-2">Visit Us</h4>
-              <p className="text-gray-400">Lagos, Nigeria</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

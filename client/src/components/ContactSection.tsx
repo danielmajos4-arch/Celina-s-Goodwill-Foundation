@@ -70,14 +70,14 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: 'Email Us',
-      primary: 'info@celinasgoodwill.org',
-      secondary: 'partnerships@celinasgoodwill.org',
+      primary: 'celinasgoodwillfoundation@gmail.com',
+      secondary: 'celinasgoodwillfoundation@gmail.com',
       description: 'Get in touch for general inquiries or partnership opportunities'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      primary: '+234 (0) 123 456 7890',
+      primary: '+2349110221031',
       secondary: '+234 (0) 098 765 4321',
       description: 'Available Monday to Friday, 9:00 AM - 5:00 PM WAT'
     },
@@ -194,7 +194,7 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      placeholder="+234 (0) 123 456 7890"
+                      placeholder="+2349110221031"
                       data-testid="input-phone"
                     />
                   </div>
