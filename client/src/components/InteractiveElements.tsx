@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Share2, ChevronRight } from 'lucide-react';
+import { Share2, ChevronRight, Heart, Users, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
 interface FloatingActionButtonProps {
   onClick: () => void;
