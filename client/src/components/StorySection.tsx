@@ -7,9 +7,7 @@ export default function StorySection() {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              From Silence to Strength
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">IMPACT STORY</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-pink-600 mx-auto mb-6"></div>
             <p className="text-xl text-muted-foreground leading-relaxed">
               In loving memory of Celina Mbgogo Okwuokei, whose journey inspired our mission to break the silence around mental health.
