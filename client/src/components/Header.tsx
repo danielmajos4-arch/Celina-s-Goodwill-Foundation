@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Heart, Home, Info, Target, TrendingUp, Handshake, MessageCircle } from 'lucide-react';
+import { Menu, X, Home, Info, Target, Handshake, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoImage from '@/assets/celina-logo.webp';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,14 +45,23 @@ export default function Header() {
       >
         <div className="flex items-center justify-between px-6 py-3">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-              <Heart className="w-5 h-5 text-white" />
+          <button 
+            onClick={() => scrollToSection('hero')}
+            className="flex items-center space-x-3 hover-elevate active-elevate-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-xl"
+            data-testid="button-logo"
+            aria-label="Go to top"
+          >
+            <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg bg-white/50 p-1">
+              <img 
+                src={logoImage} 
+                alt="Celina's Goodwill Foundation Logo" 
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
             <span className="text-lg font-bold text-foreground hidden sm:block">
-              Celina's Goodwill
+              Celina's Goodwill Foundation
             </span>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">

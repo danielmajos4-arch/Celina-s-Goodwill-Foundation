@@ -1,5 +1,6 @@
-import { ArrowDown, Users, Heart, Brain } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoImage from '@/assets/celina-logo.webp';
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -30,11 +31,14 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mb-8 flex justify-center space-x-4">
-          {/* Symbolic icons representing mental health support */}
-          
-          <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-pink-700 rounded-full flex items-center justify-center motion-safe:animate-pulse motion-safe:delay-200">
-            <Users className="w-6 h-6 text-white" />
+        <div className="mb-8 flex justify-center">
+          {/* Foundation Logo */}
+          <div className="w-24 h-24 rounded-full overflow-hidden shadow-2xl bg-white/90 p-2 motion-safe:animate-pulse">
+            <img 
+              src={logoImage} 
+              alt="Celina's Goodwill Foundation Logo" 
+              className="w-full h-full object-contain rounded-full"
+            />
           </div>
         </div>
 
