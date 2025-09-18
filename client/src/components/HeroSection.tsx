@@ -1,6 +1,6 @@
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoImage from '@/assets/celina-logo.webp';
+
 import heroBackgroundImage from '@assets/hero-hands.webp';
 
 export default function HeroSection() {
@@ -26,16 +26,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mb-8 flex justify-center">
-          {/* Foundation Logo */}
-          <div className="w-24 h-24 rounded-full overflow-hidden shadow-2xl bg-white/95 p-2 motion-safe:animate-pulse">
-            <img 
-              src={logoImage} 
-              alt="Celina's Goodwill Foundation Logo" 
-              className="w-full h-full object-contain rounded-full"
-            />
-          </div>
-        </div>
+        
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
           Breaking Mental Health{' '}
