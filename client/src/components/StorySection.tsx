@@ -67,41 +67,8 @@ export default function StorySection() {
           </div>
         </div>
 
-        {/* Mission Statement Cards */}
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center p-6 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-colors hover-elevate">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">1</span>
-              </div>
-              <h4 className="text-xl font-semibold text-foreground mb-3">Break the Silence</h4>
-              <p className="text-muted-foreground">
-                Create safe spaces where mental health conversations can happen without judgment or fear.
-              </p>
-            </div>
-
-            <div className="text-center p-6 bg-green-50 rounded-2xl hover:bg-green-100 transition-colors hover-elevate">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">2</span>
-              </div>
-              <h4 className="text-xl font-semibold text-foreground mb-3">Provide Support</h4>
-              <p className="text-muted-foreground">
-                Offer accessible mental health resources, counseling, and community support networks.
-              </p>
-            </div>
-
-            <div className="text-center p-6 bg-pink-50 rounded-2xl hover:bg-pink-100 transition-colors hover-elevate">
-              <div className="w-16 h-16 bg-gradient-to-r from-pink-600 to-pink-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">3</span>
-              </div>
-              <h4 className="text-xl font-semibold text-foreground mb-3">Advocate for Change</h4>
-              <p className="text-muted-foreground">
-                Work towards policy changes and societal shifts that prioritize mental health awareness.
-              </p>
-            </div>
-          </div>
-
-          {/* Call to Action */}
+        {/* Call to Action */}
+        <div className="max-w-4xl mx-auto mt-16">
           <div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Honor Her Memory Through Action
