@@ -1,7 +1,7 @@
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logoImage from '@/assets/celina-logo.webp';
-import heroBackgroundImage from '@assets/clipboard-image-1758163915 (1)_1758164082768.webp';
+import heroBackgroundImage from '@assets/hero-hands.webp';
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
