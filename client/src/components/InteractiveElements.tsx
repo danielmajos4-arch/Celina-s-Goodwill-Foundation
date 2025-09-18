@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Heart, Users, MessageCircle, Share2, ChevronRight } from 'lucide-react';
+import { Share2, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 
 interface FloatingActionButtonProps {
   onClick: () => void;
@@ -41,71 +40,7 @@ export function FloatingActionButton({
   );
 }
 
-interface QuickActionsProps {
-  onGetHelp: () => void;
-  onVolunteer: () => void;
-  onDonate: () => void;
-}
 
-export function QuickActions({ onGetHelp, onVolunteer, onDonate }: QuickActionsProps) {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show quick actions after scrolling past hero section
-      setIsVisible(window.scrollY > window.innerHeight * 0.8);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  if (!isVisible) return null;
-
-  return (
-    <div className="fixed bottom-6 left-6 z-40 space-y-3">
-      <Card className="bg-white/95 backdrop-blur-sm shadow-lg border-0 overflow-hidden">
-        <CardContent className="p-1">
-          <div className="space-y-1">
-            <Button
-              onClick={onGetHelp}
-              variant="ghost"
-              size="sm"
-              className="w-full justify-start text-blue-600"
-              data-testid="quick-action-get-help"
-              aria-label="Get mental health help and support"
-            >
-              <Heart className="w-4 h-4 mr-2" />
-              Get Help
-            </Button>
-            <Button
-              onClick={onVolunteer}
-              variant="ghost"
-              size="sm"
-              className="w-full justify-start text-green-600"
-              data-testid="quick-action-volunteer"
-              aria-label="Learn about volunteer opportunities"
-            >
-              <Users className="w-4 h-4 mr-2" />
-              Volunteer
-            </Button>
-            <Button
-              onClick={onDonate}
-              variant="ghost"
-              size="sm"
-              className="w-full justify-start text-pink-600"
-              data-testid="quick-action-donate"
-              aria-label="Support our mental health mission"
-            >
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Support Us
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  );
-}
 
 interface ShareButtonProps {
   url?: string;
