@@ -37,10 +37,10 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
       <nav
-        className={`max-w-4xl mx-auto transition-all duration-500 ease-out ${
+        className={`max-w-4xl mx-auto transition-all duration-500 ease-out smooth-appear glassmorphic ${
           isScrolled
-            ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-lg shadow-black/5 border border-white/20 dark:border-gray-700/30'
-            : 'bg-white/60 dark:bg-gray-900/60 backdrop-blur-lg border border-white/30 dark:border-gray-700/40'
+            ? 'bg-white/70 dark:bg-gray-900/70 shadow-2xl'
+            : 'bg-white/50 dark:bg-gray-900/50 shadow-lg'
         } rounded-2xl`}
       >
         <div className="flex items-center justify-between px-6 py-3">
@@ -60,7 +60,7 @@ export default function Header() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/50 dark:hover:bg-gray-800/50 rounded-xl transition-all duration-200 hover-elevate focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
+                className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/30 dark:hover:bg-gray-800/30 rounded-xl transition-all duration-300 hover-elevate nav-hover-effect focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
                 data-testid={`link-${item.name.toLowerCase()}`}
               >
                 <item.icon className="w-4 h-4" />
@@ -100,14 +100,14 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       {isOpen && (
-        <div className="mt-2 lg:hidden">
-          <div className="max-w-4xl mx-auto bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border border-white/20 dark:border-gray-700/30 rounded-2xl shadow-lg shadow-black/5 p-4">
+        <div className="mt-2 lg:hidden smooth-appear">
+          <div className="max-w-4xl mx-auto glassmorphic bg-white/80 dark:bg-gray-900/80 rounded-2xl p-4">
             <nav id="mobile-navigation" className="flex flex-col space-y-3" aria-label="Mobile navigation">
               {navigationItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
-                  className="flex items-center space-x-3 px-4 py-3 text-left text-foreground/80 hover:text-foreground font-medium hover:bg-white/50 dark:hover:bg-gray-800/50 rounded-xl transition-all duration-200 hover-elevate active-elevate-2 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="flex items-center space-x-3 px-4 py-3 text-left text-foreground/80 hover:text-foreground font-medium hover:bg-white/30 dark:hover:bg-gray-800/30 rounded-xl transition-all duration-300 hover-elevate active-elevate-2 nav-hover-effect focus:outline-none focus:ring-2 focus:ring-primary/50"
                   data-testid={`mobile-link-${item.name.toLowerCase()}`}
                   aria-label={`Navigate to ${item.name} section`}
                 >
@@ -117,7 +117,7 @@ export default function Header() {
               ))}
               <Button
                 onClick={() => scrollToSection('partnership')}
-                className="mt-2 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 shadow-lg text-white rounded-xl font-medium transition-all duration-200"
+                className="mt-2 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 shadow-lg text-white rounded-xl font-medium transition-all duration-300"
                 data-testid="button-mobile-get-involved"
                 aria-label="Navigate to partnership opportunities"
               >
