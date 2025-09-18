@@ -32,9 +32,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-8 flex justify-center space-x-4">
           {/* Symbolic icons representing mental health support */}
-          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center motion-safe:animate-pulse">
-            <Brain className="w-6 h-6 text-white" />
-          </div>
+          
           <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center motion-safe:animate-pulse motion-safe:delay-100">
             <Heart className="w-6 h-6 text-white" />
           </div>
@@ -77,7 +75,7 @@ export default function HeroSection() {
 
         {/* Scroll indicator */}
         <button
-          onClick={() => scrollToSection('statistics')}
+          onClick={() => scrollToSection('story')}
           className="motion-safe:animate-bounce hover:motion-safe:animate-none transition-all hover-elevate active-elevate-2"
           data-testid="button-scroll-down"
         >
