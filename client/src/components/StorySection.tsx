@@ -1,5 +1,5 @@
 import { Quote } from 'lucide-react';
-import storyImage from '@assets/stock_images/african_woman_mother_04a31483.jpg';
+import storyImage from '@assets/clipboard-image-1758167278 (1)_1758167438023.webp';
 
 export default function StorySection() {
   return (
@@ -21,7 +21,7 @@ export default function StorySection() {
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
               <img 
                 src={storyImage}
-                alt="African woman representing strength and resilience in mental health"
+                alt="Wooden scrabble tiles spelling Mental Health Awareness on woven background"
                 className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Subtle overlay */}
