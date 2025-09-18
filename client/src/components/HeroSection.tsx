@@ -5,7 +5,10 @@ export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      element.scrollIntoView({ 
+        behavior: prefersReducedMotion ? 'auto' : 'smooth' 
+      });
     }
   };
 
@@ -21,21 +24,21 @@ export default function HeroSection() {
         <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-r from-pink-600/5 to-transparent rounded-full blur-lg" />
         
         {/* Floating geometric shapes */}
-        <div className="absolute top-1/4 right-1/4 w-8 h-8 border-2 border-blue-200 rotate-45 animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/5 w-6 h-6 border-2 border-green-200 rounded-full animate-bounce" />
+        <div className="absolute top-1/4 right-1/4 w-8 h-8 border-2 border-blue-200 rotate-45 motion-safe:animate-pulse" />
+        <div className="absolute bottom-1/3 left-1/5 w-6 h-6 border-2 border-green-200 rounded-full motion-safe:animate-bounce" />
         <div className="absolute top-2/3 right-1/3 w-4 h-8 bg-pink-200 rotate-12" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-8 flex justify-center space-x-4">
           {/* Symbolic icons representing mental health support */}
-          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center animate-pulse">
+          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center motion-safe:animate-pulse">
             <Brain className="w-6 h-6 text-white" />
           </div>
-          <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center animate-pulse delay-100">
+          <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center motion-safe:animate-pulse motion-safe:delay-100">
             <Heart className="w-6 h-6 text-white" />
           </div>
-          <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-pink-700 rounded-full flex items-center justify-center animate-pulse delay-200">
+          <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-pink-700 rounded-full flex items-center justify-center motion-safe:animate-pulse motion-safe:delay-200">
             <Users className="w-6 h-6 text-white" />
           </div>
         </div>
@@ -56,7 +59,7 @@ export default function HeroSection() {
           <Button
             onClick={() => scrollToSection('partnership')}
             size="lg"
-            className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all"
+            className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg transition-all"
             data-testid="button-get-involved-hero"
           >
             Get Involved Today
@@ -65,7 +68,7 @@ export default function HeroSection() {
             onClick={() => scrollToSection('story')}
             variant="outline"
             size="lg"
-            className="border-2 border-gray-300 hover:border-gray-400 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-sm bg-white/50 hover:bg-white/70 transition-all"
+            className="border-2 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-sm bg-white/50 transition-all"
             data-testid="button-our-story"
           >
             Our Story
@@ -75,7 +78,7 @@ export default function HeroSection() {
         {/* Scroll indicator */}
         <button
           onClick={() => scrollToSection('statistics')}
-          className="animate-bounce hover:animate-none transition-all hover:text-primary"
+          className="motion-safe:animate-bounce hover:motion-safe:animate-none transition-all hover:text-primary"
           data-testid="button-scroll-down"
         >
           <ArrowDown className="w-8 h-8 mx-auto text-muted-foreground hover:text-primary" />

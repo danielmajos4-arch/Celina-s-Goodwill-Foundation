@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, AlertCircle, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { ShareButton } from '@/components/InteractiveElements';
+import { useToast } from '@/hooks/use-toast';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ export default function ContactSection() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -27,24 +30,40 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // TODO: remove mock functionality - implement real form submission
-    console.log('Form submitted:', formData);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      inquiryType: 'general'
-    });
-    
-    setIsSubmitting(false);
-    alert('Thank you for your message! We will get back to you within 24 hours.');
+    try {
+      // TODO: remove mock functionality - implement real form submission
+      console.log('Form submitted:', formData);
+      
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        inquiryType: 'general'
+      });
+      
+      // Show success message
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. We'll get back to you within 24 hours.",
+        variant: "default"
+      });
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please check your connection and try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -97,12 +116,18 @@ export default function ContactSection() {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" aria-labelledby="contact-form-title">
+                <div className="sr-only">
+                  <h3 id="contact-form-title">Contact Form</h3>
+                  <p>Fill out this form to get in touch with us. Required fields are marked with an asterisk.</p>
+                </div>
+                
                 {/* Inquiry Type */}
                 <div>
                   <label htmlFor="inquiryType" className="block text-sm font-semibold text-foreground mb-2">
                     Type of Inquiry
                   </label>
+                  <div id="inquiryType-desc" className="sr-only">Choose the category that best describes your inquiry</div>
                   <select
                     id="inquiryType"
                     name="inquiryType"
@@ -110,6 +135,7 @@ export default function ContactSection() {
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     data-testid="select-inquiry-type"
+                    aria-describedby="inquiryType-desc"
                   >
                     <option value="general">General Inquiry</option>
                     <option value="volunteer">Volunteer Opportunities</option>
@@ -212,12 +238,12 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white py-4 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white py-4 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                   data-testid="button-submit-contact"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full motion-safe:animate-spin mr-2" />
                       Sending...
                     </div>
                   ) : (
@@ -275,6 +301,19 @@ export default function ContactSection() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Share Section */}
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold text-foreground mb-4">
+            Help Us Spread Awareness
+          </h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Share our mission with your network. Every share helps break the stigma and reaches someone who might need support.
+          </p>
+          <div className="flex justify-center">
+            <ShareButton />
           </div>
         </div>
 

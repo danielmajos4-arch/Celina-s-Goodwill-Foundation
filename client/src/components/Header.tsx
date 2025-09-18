@@ -17,7 +17,10 @@ export default function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      element.scrollIntoView({ 
+        behavior: prefersReducedMotion ? 'auto' : 'smooth' 
+      });
       setIsOpen(false);
     }
   };
@@ -67,7 +70,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('partnership')}
-              className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
+              className="bg-gradient-to-r from-blue-600 to-green-600"
               data-testid="button-get-involved"
             >
               Get Involved
@@ -79,6 +82,9 @@ export default function Header() {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
             data-testid="button-mobile-menu"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
             {isOpen ? (
               <X className="w-6 h-6 text-foreground" />
@@ -91,7 +97,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 py-4">
-            <nav className="flex flex-col space-y-4">
+            <nav id="mobile-navigation" className="flex flex-col space-y-4" aria-label="Mobile navigation">
               {[
                 { name: 'Home', id: 'hero' },
                 { name: 'About', id: 'story' },
@@ -103,16 +109,18 @@ export default function Header() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left text-foreground hover:text-primary transition-colors font-medium px-2 py-1"
+                  className="text-left text-foreground hover:text-primary transition-colors font-medium px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
                   data-testid={`mobile-link-${item.name.toLowerCase()}`}
+                  aria-label={`Navigate to ${item.name} section`}
                 >
                   {item.name}
                 </button>
               ))}
               <Button
                 onClick={() => scrollToSection('partnership')}
-                className="mt-4 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
+                className="mt-4 bg-gradient-to-r from-blue-600 to-green-600"
                 data-testid="button-mobile-get-involved"
+                aria-label="Navigate to partnership opportunities"
               >
                 Get Involved
               </Button>

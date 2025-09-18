@@ -1,13 +1,16 @@
-import { Facebook, PlayCircle, Heart, MessageCircle, Share2, ExternalLink } from 'lucide-react';
+import { Facebook, PlayCircle, Heart, MessageCircle, Share2, ExternalLink, Brain, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useToast } from '@/hooks/use-toast';
 
 export default function SocialMediaSection() {
+  const { toast } = useToast();
+  
   // TODO: remove mock functionality - replace with real social media feeds
   const mockFacebookPosts = [
     {
       id: 1,
-      content: "Mental health awareness week reminder: Your feelings are valid, your struggles are real, and seeking help is a sign of courage, not weakness. 💪✨ #MentalHealthMatters #BreakTheStigma",
+      content: "Mental health awareness week reminder: Your feelings are valid, your struggles are real, and seeking help is a sign of courage, not weakness. #MentalHealthMatters #BreakTheStigma",
       likes: 156,
       comments: 23,
       shares: 45,
@@ -15,7 +18,7 @@ export default function SocialMediaSection() {
     },
     {
       id: 2, 
-      content: "Grateful for our volunteers who showed up today to support our community workshop on stress management. Together, we're building a stronger, more understanding community. 🤝❤️",
+      content: "Grateful for our volunteers who showed up today to support our community workshop on stress management. Together, we're building a stronger, more understanding community.",
       likes: 89,
       comments: 12,
       shares: 28,
@@ -29,27 +32,75 @@ export default function SocialMediaSection() {
       title: "5 Signs It's Time to Seek Mental Health Support",
       views: "12.3K",
       likes: "1.2K",
-      thumbnail: "🧠✨"
+      thumbnail: <Brain className="w-8 h-8 text-blue-600" />
     },
     {
       id: 2,
       title: "Breathing Exercises for Anxiety Relief",
       views: "8.7K", 
       likes: "890",
-      thumbnail: "💨🌸"
+      thumbnail: <Heart className="w-8 h-8 text-green-600" />
     },
     {
       id: 3,
       title: "Breaking Mental Health Myths",
       views: "15.1K",
       likes: "2.1K", 
-      thumbnail: "🚫🧩"
+      thumbnail: <Shield className="w-8 h-8 text-pink-600" />
     }
   ];
 
   const handleSocialClick = (platform: string, action: string) => {
     console.log(`${platform} ${action} clicked`);
+    
+    // Handle different actions with toast feedback
+    switch (action) {
+      case 'follow':
+        toast({
+          title: `Following ${platform}!`,
+          description: "Thank you for joining our community.",
+          variant: "default"
+        });
+        break;
+      case 'like':
+        toast({
+          title: "Thank you for your support!",
+          description: "Your engagement helps spread mental health awareness.",
+          variant: "default"
+        });
+        break;
+      case 'share':
+        toast({
+          title: "Thank you for sharing!",
+          description: "You're helping us break mental health stigma.",
+          variant: "default"
+        });
+        break;
+      case 'comment':
+        toast({
+          title: "Join the conversation",
+          description: "Visit our social media to share your thoughts.",
+          variant: "default"
+        });
+        break;
+      case 'watch':
+        toast({
+          title: "Opening video",
+          description: "Watch on our TikTok for mental health tips.",
+          variant: "default"
+        });
+        break;
+      case 'visit':
+        toast({
+          title: `Opening ${platform}`,
+          description: "Follow us for daily inspiration and support.",
+          variant: "default"
+        });
+        break;
+    }
+    
     // TODO: Implement real social media integration
+    // For now, just provide feedback to the user
   };
 
   return (
@@ -174,7 +225,7 @@ export default function SocialMediaSection() {
                     data-testid={`tiktok-video-${video.id}`}
                   >
                     <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">
+                      <div className="w-16 h-16 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
                         {video.thumbnail}
                       </div>
                       <div className="flex-1">
