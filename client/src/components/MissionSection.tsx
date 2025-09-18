@@ -1,4 +1,4 @@
-import missionImage from '@assets/stock_images/young_people_mental__8a7be0f1.jpg';
+import missionImage from '@assets/image_1758168726741.png';
 import visionImage from '@assets/stock_images/diverse_community_so_70f4e47a.jpg';
 
 export default function MissionSection() {
