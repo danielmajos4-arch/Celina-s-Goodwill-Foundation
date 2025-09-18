@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import StatisticsSection from '@/components/StatisticsSection';
 import StorySection from '@/components/StorySection';
 import MissionSection from '@/components/MissionSection';
 import PartnershipSection from '@/components/PartnershipSection';
@@ -56,10 +55,6 @@ export default function Home() {
       <Header />
       
       <HeroSection />
-      
-      <AnimatedSection animation="fade-up" delay={200}>
-        <StatisticsSection />
-      </AnimatedSection>
       
       <AnimatedSection animation="fade-up" delay={300}>
         <StorySection />

@@ -29,7 +29,6 @@ export default function Header() {
     { name: 'Home', id: 'hero', icon: Home },
     { name: 'About', id: 'story', icon: Info },
     { name: 'Mission', id: 'mission', icon: Target },
-    { name: 'Impact', id: 'statistics', icon: TrendingUp },
     { name: 'Partnership', id: 'partnership', icon: Handshake },
     { name: 'Contact', id: 'contact', icon: MessageCircle }
   ];
