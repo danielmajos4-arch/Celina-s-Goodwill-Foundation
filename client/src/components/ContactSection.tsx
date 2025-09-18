@@ -317,18 +317,6 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Emergency Support Notice */}
-        <div className="mt-16 text-center bg-gradient-to-r from-red-600 to-pink-600 rounded-3xl p-8 text-white">
-          <h3 className="text-2xl font-bold mb-4">Need Immediate Support?</h3>
-          <p className="text-lg mb-4">
-            If you're experiencing a mental health crisis or need immediate support, please reach out to these resources:
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm">
-            <p><strong>National Suicide Prevention:</strong> 988</p>
-            <p><strong>Crisis Text Line:</strong> Text HOME to 741741</p>
-            <p><strong>Emergency Services:</strong> 911</p>
-          </div>
-        </div>
       </div>
     </section>
   );
