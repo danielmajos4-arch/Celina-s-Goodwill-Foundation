@@ -35,10 +35,7 @@ export default function StorySection() {
 
           {/* Right Side - Story Content */}
           <div className="space-y-6">
-            {/* Quote Icon */}
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-pink-600 rounded-full flex items-center justify-center mb-8">
-              <Quote className="w-8 h-8 text-white" />
-            </div>
+            
 
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               A Mother's Silent Struggle
