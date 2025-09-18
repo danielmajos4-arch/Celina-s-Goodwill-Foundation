@@ -33,9 +33,6 @@ export default function HeroSection() {
         <div className="mb-8 flex justify-center space-x-4">
           {/* Symbolic icons representing mental health support */}
           
-          <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center motion-safe:animate-pulse motion-safe:delay-100">
-            <Heart className="w-6 h-6 text-white" />
-          </div>
           <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-pink-700 rounded-full flex items-center justify-center motion-safe:animate-pulse motion-safe:delay-200">
             <Users className="w-6 h-6 text-white" />
           </div>
