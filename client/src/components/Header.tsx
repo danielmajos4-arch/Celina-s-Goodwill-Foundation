@@ -58,9 +58,7 @@ export default function Header() {
                 className="w-full h-full object-contain rounded-full"
               />
             </div>
-            <span className="text-lg font-bold text-foreground hidden sm:block">
-              Celina's Goodwill Foundation
-            </span>
+            <span className="text-lg font-bold text-foreground hidden sm:block">Celina's Foundation</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -106,7 +104,6 @@ export default function Header() {
           </button>
         </div>
       </nav>
-
       {/* Mobile Navigation Dropdown */}
       {isOpen && (
         <div className="mt-2 lg:hidden smooth-appear">
