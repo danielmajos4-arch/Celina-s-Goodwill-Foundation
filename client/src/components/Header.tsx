@@ -58,7 +58,7 @@ export default function Header() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground font-medium hover-elevate active-elevate-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
                 data-testid={`link-${item.name.toLowerCase()}`}
               >
                 {item.name}
@@ -80,7 +80,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-md hover-elevate active-elevate-2 transition-colors"
             data-testid="button-mobile-menu"
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isOpen}
@@ -109,7 +109,7 @@ export default function Header() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left text-foreground hover:text-primary transition-colors font-medium px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                  className="text-left text-foreground font-medium px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded hover-elevate active-elevate-2"
                   data-testid={`mobile-link-${item.name.toLowerCase()}`}
                   aria-label={`Navigate to ${item.name} section`}
                 >

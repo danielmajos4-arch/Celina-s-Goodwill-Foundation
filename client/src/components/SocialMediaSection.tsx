@@ -136,7 +136,7 @@ export default function SocialMediaSection() {
                     onClick={() => handleSocialClick('Facebook', 'follow')}
                     variant="secondary"
                     size="sm"
-                    className="bg-white/20 hover:bg-white/30 text-white border-white/30"
+                    className="bg-white/20 text-white border-white/30"
                     data-testid="button-facebook-follow"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
@@ -157,7 +157,7 @@ export default function SocialMediaSection() {
                       <div className="flex items-center space-x-4">
                         <button
                           onClick={() => handleSocialClick('Facebook', 'like')}
-                          className="flex items-center space-x-1 hover:text-blue-600 transition-colors"
+                          className="flex items-center space-x-1 hover-elevate active-elevate-2"
                           data-testid={`button-facebook-like-${post.id}`}
                         >
                           <Heart className="w-4 h-4" />
@@ -165,7 +165,7 @@ export default function SocialMediaSection() {
                         </button>
                         <button
                           onClick={() => handleSocialClick('Facebook', 'comment')}
-                          className="flex items-center space-x-1 hover:text-blue-600 transition-colors"
+                          className="flex items-center space-x-1 hover-elevate active-elevate-2"
                           data-testid={`button-facebook-comment-${post.id}`}
                         >
                           <MessageCircle className="w-4 h-4" />
@@ -173,7 +173,7 @@ export default function SocialMediaSection() {
                         </button>
                         <button
                           onClick={() => handleSocialClick('Facebook', 'share')}
-                          className="flex items-center space-x-1 hover:text-blue-600 transition-colors"
+                          className="flex items-center space-x-1 hover-elevate active-elevate-2"
                           data-testid={`button-facebook-share-${post.id}`}
                         >
                           <Share2 className="w-4 h-4" />
@@ -206,7 +206,7 @@ export default function SocialMediaSection() {
                     onClick={() => handleSocialClick('TikTok', 'follow')}
                     variant="secondary"
                     size="sm"
-                    className="bg-white/20 hover:bg-white/30 text-white border-white/30"
+                    className="bg-white/20 text-white border-white/30"
                     data-testid="button-tiktok-follow"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
@@ -220,16 +220,16 @@ export default function SocialMediaSection() {
                 {mockTikTokVideos.map((video, index) => (
                   <div
                     key={video.id}
-                    className="bg-gray-900 rounded-2xl p-4 hover:bg-gray-800 transition-colors cursor-pointer group"
+                    className="bg-gray-900 rounded-2xl p-4 hover-elevate active-elevate-2 cursor-pointer group"
                     onClick={() => handleSocialClick('TikTok', 'watch')}
                     data-testid={`tiktok-video-${video.id}`}
                   >
                     <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <div className="w-16 h-16 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl flex items-center justify-center">
                         {video.thumbnail}
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-white font-medium mb-2 group-hover:text-pink-300 transition-colors">
+                        <h4 className="text-white font-medium mb-2">
                           {video.title}
                         </h4>
                         <div className="flex items-center space-x-4 text-sm text-gray-400">
@@ -263,7 +263,7 @@ export default function SocialMediaSection() {
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button
               onClick={() => handleSocialClick('Facebook', 'visit')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4"
+              className="bg-blue-600 text-white px-8 py-4"
               data-testid="button-visit-facebook"
             >
               <Facebook className="w-5 h-5 mr-2" />
@@ -271,7 +271,7 @@ export default function SocialMediaSection() {
             </Button>
             <Button
               onClick={() => handleSocialClick('TikTok', 'visit')}
-              className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4"
+              className="bg-pink-600 text-white px-8 py-4"
               data-testid="button-visit-tiktok"
             >
               <PlayCircle className="w-5 h-5 mr-2" />

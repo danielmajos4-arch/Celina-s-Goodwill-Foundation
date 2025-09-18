@@ -78,10 +78,10 @@ export default function HeroSection() {
         {/* Scroll indicator */}
         <button
           onClick={() => scrollToSection('statistics')}
-          className="motion-safe:animate-bounce hover:motion-safe:animate-none transition-all hover:text-primary"
+          className="motion-safe:animate-bounce hover:motion-safe:animate-none transition-all hover-elevate active-elevate-2"
           data-testid="button-scroll-down"
         >
-          <ArrowDown className="w-8 h-8 mx-auto text-muted-foreground hover:text-primary" />
+          <ArrowDown className="w-8 h-8 mx-auto text-muted-foreground" />
         </button>
       </div>
     </section>
