@@ -1,5 +1,5 @@
 import { Heart, ArrowUp } from 'lucide-react';
-import { SiFacebook, SiTiktok } from 'react-icons/si';
+import { SiFacebook, SiTiktok, SiX, SiInstagram } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
@@ -20,49 +20,181 @@ export default function Footer() {
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12">
-          <div className="text-center">
-            {/* Foundation Logo and Name */}
-            <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-pink-500 rounded-full flex items-center justify-center">
-                <Heart className="w-5 h-5 text-white" />
+        <div className="py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            {/* Left Side - Foundation Info */}
+            <div className="lg:col-span-5">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-pink-500 rounded-full flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold">Celina's Goodwill Foundation</h3>
               </div>
-              <h3 className="text-2xl font-bold">Celina's Goodwill Foundation</h3>
-            </div>
-            
-            {/* Short Description */}
-            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Breaking mental health stigma through compassion and community support.
-            </p>
-
-            {/* Social Media Links */}
-            <div className="flex justify-center space-x-6 mb-8">
-              <a
-                href="#"
-                className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors group"
-                aria-label="Facebook - Joyful Healing Hub"
-                data-testid="link-facebook-footer"
-              >
-                <SiFacebook className="w-6 h-6 text-white" />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-black hover:bg-gray-900 border-2 border-white rounded-full flex items-center justify-center transition-colors group"
-                aria-label="TikTok - @joyfulhealinghub"
-                data-testid="link-tiktok-footer"
-              >
-                <SiTiktok className="w-6 h-6 text-white" />
-              </a>
+              
+              <p className="text-gray-400 text-lg leading-relaxed max-w-md">
+                Breaking mental health stigma through compassion, advocacy, and community support across Nigeria and beyond.
+              </p>
             </div>
 
-            {/* Social Media Handles */}
-            <div className="flex justify-center space-x-8 text-sm text-gray-400 mb-8">
-              <p><strong>Facebook:</strong> Joyful Healing Hub</p>
-              <p><strong>TikTok:</strong> @joyfulhealinghub</p>
-            </div>
+            {/* Right Side - Link Columns */}
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {/* Quick Links */}
+                <div>
+                  <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+                  <ul className="space-y-4">
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('story')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-story"
+                      >
+                        Our Story
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('mission')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-mission"
+                      >
+                        Mission & Vision
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('partnership')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-partnership"
+                      >
+                        Get Involved
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('contact')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-contact"
+                      >
+                        Contact
+                      </button>
+                    </li>
+                  </ul>
+                </div>
 
-            {/* Memorial Line */}
-            <p className="text-gray-400 italic mb-6">
+                {/* About */}
+                <div>
+                  <h4 className="text-white font-semibold mb-6">About</h4>
+                  <ul className="space-y-4">
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('story')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-about-story"
+                      >
+                        About us
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('mission')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-about-mission"
+                      >
+                        Our Mission
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('partnership')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-about-impact"
+                      >
+                        Our Impact
+                      </button>
+                    </li>
+                    <li>
+                      <span className="text-gray-400 text-sm">
+                        Community
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Support */}
+                <div>
+                  <h4 className="text-white font-semibold mb-6">Support</h4>
+                  <ul className="space-y-4">
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('contact')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-support-contact"
+                      >
+                        Contact us
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('partnership')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-support-help"
+                      >
+                        Get Help
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => scrollToSection('partnership')}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-link-support-partnership"
+                      >
+                        Partnership
+                      </button>
+                    </li>
+                    <li>
+                      <span className="text-gray-400 text-sm">
+                        Resources
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Connect */}
+                <div>
+                  <h4 className="text-white font-semibold mb-6">Connect</h4>
+                  <ul className="space-y-4">
+                    <li>
+                      <span className="text-gray-400 text-sm">
+                        Social Media
+                      </span>
+                    </li>
+                    <li>
+                      <span className="text-gray-400 text-sm">
+                        Newsletter
+                      </span>
+                    </li>
+                    <li>
+                      <span className="text-gray-400 text-sm">
+                        Community
+                      </span>
+                    </li>
+                    <li>
+                      <span className="text-gray-400 text-sm">
+                        Events
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Memorial Line */}
+        <div className="border-t border-gray-800 py-8">
+          <div className="text-center">
+            <p className="text-gray-500 italic">
               In loving memory of Celina Mbgogo Okwuokei
             </p>
           </div>
@@ -70,21 +202,64 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="border-t border-gray-800 py-6">
-          <div className="flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © {currentYear} Celina's Goodwill Foundation. All rights reserved.
-            </p>
-              
-            <Button
-              onClick={scrollToTop}
-              variant="outline"
-              size="sm"
-              className="border-gray-600 text-gray-300 hover:text-white hover:border-gray-400 bg-transparent hover:bg-gray-800"
-              data-testid="button-scroll-to-top"
-            >
-              <ArrowUp className="w-4 h-4 mr-1" />
-              Back to Top
-            </Button>
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            {/* Left - Copyright */}
+            <div className="text-center md:text-left">
+              <p className="text-gray-500 text-sm">
+                Copyright © {currentYear} Celina's Goodwill Foundation. All rights reserved.
+              </p>
+            </div>
+
+            {/* Right - Social Icons + Back to Top */}
+            <div className="flex items-center space-x-4">
+              {/* Social Media Icons */}
+              <div className="flex space-x-3">
+                <a
+                  href="#"
+                  className="w-9 h-9 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="Facebook - Joyful Healing Hub"
+                  data-testid="link-facebook-footer"
+                >
+                  <SiFacebook className="w-4 h-4 text-white" />
+                </a>
+                <a
+                  href="#"
+                  className="w-9 h-9 bg-gray-800 hover:bg-black border border-gray-600 hover:border-white rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="TikTok - @joyfulhealinghub"
+                  data-testid="link-tiktok-footer"
+                >
+                  <SiTiktok className="w-4 h-4 text-white" />
+                </a>
+                <a
+                  href="#"
+                  className="w-9 h-9 bg-gray-800 hover:bg-blue-400 rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="Twitter"
+                  data-testid="link-twitter-footer"
+                >
+                  <SiX className="w-4 h-4 text-white" />
+                </a>
+                <a
+                  href="#"
+                  className="w-9 h-9 bg-gray-800 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="Instagram"
+                  data-testid="link-instagram-footer"
+                >
+                  <SiInstagram className="w-4 h-4 text-white" />
+                </a>
+              </div>
+
+              {/* Back to Top Button */}
+              <Button
+                onClick={scrollToTop}
+                variant="outline"
+                size="sm"
+                className="border-gray-700 text-gray-400 hover:text-white hover:border-gray-500 bg-transparent hover:bg-gray-800 ml-4"
+                data-testid="button-scroll-to-top"
+              >
+                <ArrowUp className="w-4 h-4 mr-1" />
+                Top
+              </Button>
+            </div>
           </div>
         </div>
       </div>
