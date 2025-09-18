@@ -32,9 +32,9 @@ export default function StorySection() {
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">At Celina’s Goodwill Foundation for Mental Health, our mission is simple yet personal: to break the silence around mental health, end stigma, and show that seeking help is courage, not weakness.
 
                   Named in honor of my late mother, Celina Mbgogo Okwuokei, whose absence shaped my life, the foundation was born from both loss and love. What began as grief has become a vision of healing and hope for others on similar paths.</p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Her story is not unique—it reflects the experiences of countless individuals who suffer in silence, unable to access the support they desperately need. It was her courage in vulnerability that inspired the creation of this foundation.
-                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">We understand how untreated struggles can weigh heavily, often in silence. That’s why we educate, support, and empower young people and communities to prioritize mental well-being.
+                  Through advocacy and open conversations, we create safe spaces where every voice matters and every step toward healing is celebrated.
+                  At Celina’s Goodwill Foundation, we believe no one should suffer in silence. Together, we can turn pain into purpose, stigma into understanding, and silence into hope.</p>
                 </div>
               </div>
             </div>
