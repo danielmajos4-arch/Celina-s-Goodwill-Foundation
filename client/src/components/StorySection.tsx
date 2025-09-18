@@ -29,9 +29,9 @@ export default function StorySection() {
                   <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                     A Mother's Silent Struggle
                   </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Celina Mbgogo Okwuokei was a pillar of strength in her community, always ready to help others while quietly carrying her own burdens. Like many in our society, she faced mental health challenges in silence, hindered by stigma and the fear of judgment.
-                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">At Celina’s Goodwill Foundation for Mental Health, our mission is simple yet personal: to break the silence around mental health, end stigma, and show that seeking help is courage, not weakness.
+
+                  Named in honor of my late mother, Celina Mbgogo Okwuokei, whose absence shaped my life, the foundation was born from both loss and love. What began as grief has become a vision of healing and hope for others on similar paths.</p>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Her story is not unique—it reflects the experiences of countless individuals who suffer in silence, unable to access the support they desperately need. It was her courage in vulnerability that inspired the creation of this foundation.
                   </p>
