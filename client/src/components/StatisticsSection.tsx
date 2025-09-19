@@ -63,13 +63,13 @@ export default function StatisticsSection() {
   ];
 
   return (
-    <section id="statistics" className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
+    <section id="statistics" className="py-20 bg-gradient-to-r from-gray-50 to-blue-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Impact in Numbers
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Every number represents a life transformed, a story of hope, and a step towards a mentally healthier community.
           </p>
         </div>
@@ -78,18 +78,18 @@ export default function StatisticsSection() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 group"
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 group"
               data-testid={`stat-card-${index}`}
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${stat.color} rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
               
-              <div className="text-4xl font-bold text-foreground mb-2" data-testid={`stat-value-${index}`}>
+              <div className="text-3xl sm:text-4xl font-bold text-foreground mb-2" data-testid={`stat-value-${index}`}>
                 <Counter end={stat.value} suffix={stat.suffix} />
               </div>
               
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">
                 {stat.label}
               </h3>
               
@@ -101,7 +101,7 @@ export default function StatisticsSection() {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-base sm:text-lg text-muted-foreground mb-6">
             These achievements are just the beginning of our journey to break mental health stigma.
           </p>
           <div className="flex justify-center">
