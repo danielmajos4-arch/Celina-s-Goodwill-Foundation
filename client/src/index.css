@@ -382,3 +382,210 @@
     inset: -1px;
   }
 }
+
+/* ===== PREMIUM ANIMATIONS ===== */
+
+/* Floating Animation - Gentle vertical movement */
+@keyframes gentle-float {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-4px);
+  }
+}
+
+/* Breathing Animation - Subtle scale pulse */
+@keyframes gentle-breathe {
+  0%, 100% { 
+    transform: scale(1);
+  }
+  50% { 
+    transform: scale(1.02);
+  }
+}
+
+/* Shimmer Effect - Elegant highlight sweep */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Gradient Shift - Soft color breathing */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Stagger Animation - For text reveals */
+@keyframes stagger-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gentle Tilt - Soft 3D effect */
+@keyframes gentle-tilt {
+  0% { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+  25% { transform: perspective(1000px) rotateY(1deg) rotateX(0.5deg); }
+  50% { transform: perspective(1000px) rotateY(0deg) rotateX(1deg); }
+  75% { transform: perspective(1000px) rotateY(-1deg) rotateX(0.5deg); }
+  100% { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+}
+
+/* ===== ANIMATION UTILITY CLASSES ===== */
+
+/* Floating elements */
+.gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+.gentle-float-delayed {
+  animation: gentle-float 4.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Breathing elements */
+.gentle-breathe {
+  animation: gentle-breathe 6s ease-in-out infinite;
+}
+
+/* Shimmer text effect */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 75%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  background-clip: text;
+}
+
+/* Gradient background animation */
+.gradient-shift {
+  background: linear-gradient(-45deg, #3b82f6, #10b981, #f59e0b, #ec4899);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Staggered reveals */
+.stagger-1 {
+  animation: stagger-up 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.stagger-2 {
+  animation: stagger-up 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.stagger-3 {
+  animation: stagger-up 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.hover-tilt {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-tilt:hover {
+  transform: perspective(1000px) rotateY(2deg) rotateX(2deg) scale(1.02);
+}
+
+/* Smooth magnetism effect for buttons */
+.magnetic-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.magnetic-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.magnetic-hover:hover::before {
+  transform: translateX(100%);
+}
+
+.magnetic-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Glassmorphic blur transitions */
+.glassmorphic {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.glassmorphic:hover {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Smooth appear animation */
+.smooth-appear {
+  animation: stagger-up 1s ease-out forwards;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .gentle-float,
+  .gentle-float-delayed,
+  .gentle-breathe,
+  .shimmer-text,
+  .gradient-shift,
+  .stagger-1,
+  .stagger-2,
+  .stagger-3 {
+    animation: none;
+  }
+  
+  .hover-lift:hover,
+  .hover-tilt:hover,
+  .magnetic-hover:hover {
+    transform: none;
+  }
+}
