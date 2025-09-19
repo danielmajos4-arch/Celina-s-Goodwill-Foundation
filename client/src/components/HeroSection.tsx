@@ -15,7 +15,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden scroll-mt-20">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -25,7 +25,7 @@ export default function HeroSection() {
       {/* Dark Overlay for Text Readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 sm:pt-28 md:pt-20">
         
 
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
