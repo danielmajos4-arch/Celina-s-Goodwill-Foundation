@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  root: "client", // 👈 tell Vite where index.html is
+  root: "client", // entry folder where index.html lives
   plugins: [react()],
   resolve: {
     alias: {
@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../dist", // go up one level so dist/ is at project root
+    outDir: "../dist", // output dist in project root for Vercel
     emptyOutDir: true,
   },
   server: {
