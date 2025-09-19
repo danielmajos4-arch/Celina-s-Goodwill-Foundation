@@ -182,7 +182,7 @@ export default function Footer() {
                 onClick={scrollToTop}
                 variant="outline"
                 size="sm"
-                className="border-gray-700 text-gray-400 hover:text-white hover:border-gray-500 bg-transparent hover:bg-gray-800 ml-4"
+                className="border-gray-700 text-gray-400 hover:text-white hover:border-gray-500 bg-transparent hover:bg-gray-800 ml-4 magnetic-hover gentle-float"
                 data-testid="button-scroll-to-top"
               >
                 <ArrowUp className="w-4 h-4 mr-1" />

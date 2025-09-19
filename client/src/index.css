@@ -572,6 +572,7 @@
 
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
+  /* Disable all continuous animations */
   .gentle-float,
   .gentle-float-delayed,
   .gentle-breathe,
@@ -580,12 +581,28 @@
   .stagger-1,
   .stagger-2,
   .stagger-3 {
-    animation: none;
+    animation: none !important;
   }
   
+  /* Reduce hover transforms and remove scaling */
   .hover-lift:hover,
   .hover-tilt:hover,
   .magnetic-hover:hover {
-    transform: none;
+    transform: none !important;
+  }
+  
+  /* Global animation override for accessibility */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Keep focus styles intact for accessibility */
+  :focus {
+    transition-duration: 0.15s !important;
   }
 }
