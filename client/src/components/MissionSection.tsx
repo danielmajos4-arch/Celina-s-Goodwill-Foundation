@@ -20,12 +20,12 @@ export default function MissionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Mission Statement Card */}
           <div 
-            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer hover-tilt hover-glow gentle-breathe"
+            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer hover-tilt hover-glow gentle-breathe magnetic-hover"
             data-testid="card-mission"
           >
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105"
               style={{ backgroundImage: `url(${missionImage})` }}
             />
             
@@ -47,12 +47,12 @@ export default function MissionSection() {
 
           {/* Vision Statement Card */}
           <div 
-            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer hover-tilt hover-glow gentle-breathe gentle-float-delayed"
+            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer hover-tilt hover-glow gentle-breathe gentle-float-delayed magnetic-hover"
             data-testid="card-vision"
           >
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105"
               style={{ backgroundImage: `url(${visionImage})` }}
             />
             

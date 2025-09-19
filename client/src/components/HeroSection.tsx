@@ -22,8 +22,9 @@ export default function HeroSection() {
         style={{ backgroundImage: `url(${heroBackgroundImage})` }}
       />
       
-      {/* Dark Overlay for Text Readability */}
+      {/* Dark Overlay for Text Readability with breathing gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-green-900/10 to-pink-900/10 gradient-shift" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 sm:pt-28 md:pt-20">
         
@@ -42,11 +43,11 @@ export default function HeroSection() {
           Join us in creating a world where seeking help is a sign of strength.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 mb-12 stagger-3">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 mb-12">
           <Button
             onClick={() => scrollToSection('partnership')}
             size="lg"
-            className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg magnetic-hover hover-glow"
+            className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg magnetic-hover hover-glow slide-in-left"
             data-testid="button-get-involved-hero"
           >
             Get Involved Today
@@ -55,7 +56,7 @@ export default function HeroSection() {
             onClick={() => scrollToSection('story')}
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto border-2 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-sm bg-white/50 magnetic-hover glassmorphic"
+            className="w-full sm:w-auto border-2 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-sm bg-white/50 magnetic-hover glassmorphic slide-in-right"
             data-testid="button-our-story"
           >
             Our Story
