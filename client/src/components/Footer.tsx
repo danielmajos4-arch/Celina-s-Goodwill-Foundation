@@ -160,29 +160,27 @@ export default function Footer() {
                   </ul>
                 </div>
 
-                {/* Connect */}
+                {/* Contact Info */}
                 <div>
-                  <h4 className="text-white font-semibold mb-6">Connect</h4>
+                  <h4 className="text-white font-semibold mb-6">Contact Info</h4>
                   <ul className="space-y-4">
                     <li>
-                      <span className="text-gray-400 text-sm">
-                        Social Media
-                      </span>
+                      <a 
+                        href="mailto:celinasgoodwillfoundation@gmail.com"
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-email"
+                      >
+                        celinasgoodwillfoundation@gmail.com
+                      </a>
                     </li>
                     <li>
-                      <span className="text-gray-400 text-sm">
-                        Newsletter
-                      </span>
-                    </li>
-                    <li>
-                      <span className="text-gray-400 text-sm">
-                        Community
-                      </span>
-                    </li>
-                    <li>
-                      <span className="text-gray-400 text-sm">
-                        Events
-                      </span>
+                      <a 
+                        href="tel:+2349110221031"
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                        data-testid="footer-phone"
+                      >
+                        +234 911 022 1031
+                      </a>
                     </li>
                   </ul>
                 </div>
