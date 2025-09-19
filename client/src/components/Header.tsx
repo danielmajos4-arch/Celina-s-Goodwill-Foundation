@@ -80,7 +80,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('partnership')}
-              className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 shadow-lg text-white px-6 py-2 rounded-xl font-medium transition-all duration-200"
+              className="border border-primary-border bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 shadow-lg text-white px-6 py-2 rounded-xl font-medium transition-all duration-200 pl-[18px] pr-[18px]"
               data-testid="button-get-involved"
             >
               Work with us
