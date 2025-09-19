@@ -98,14 +98,14 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Get in Touch
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Ready to join our mission or need support? We're here to listen, help, and work together towards better mental health for all.
           </p>
         </div>
@@ -113,8 +113,8 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="bg-white shadow-xl border-0">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h3>
+            <CardContent className="p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Send Us a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6" aria-labelledby="contact-form-title">
                 <div className="sr-only">
@@ -261,13 +261,13 @@ export default function ContactSection() {
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
               <Card key={index} className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-foreground mb-2">
+                      <h4 className="text-base sm:text-lg font-semibold text-foreground mb-2">
                         {info.title}
                       </h4>
                       <p className="text-foreground font-medium mb-1">
@@ -287,11 +287,11 @@ export default function ContactSection() {
 
             {/* Donation Notice */}
             <Card className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-orange-400 shadow-lg">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex items-start space-x-3">
                   <AlertCircle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-lg font-semibold text-orange-800 mb-2">
+                    <h4 className="text-base sm:text-lg font-semibold text-orange-800 mb-2">
                       Donation Information
                     </h4>
                     <p className="text-orange-700 leading-relaxed">
@@ -306,7 +306,7 @@ export default function ContactSection() {
 
         {/* Share Section */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
             Help Us Spread Awareness
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
