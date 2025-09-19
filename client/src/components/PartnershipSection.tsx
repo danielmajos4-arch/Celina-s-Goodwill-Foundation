@@ -198,37 +198,52 @@ export default function PartnershipSection() {
 
               {/* Info Section */}
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-4">
-                    Join Our Community
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Your contribution, no matter how big or small, creates ripple effects 
-                    of positive change in mental health advocacy.
-                  </p>
-                </div>
+                <div className="flex flex-col lg:flex-row items-center gap-6">
+                  {/* Text Content */}
+                  <div className="flex-1">
+                    <div className="text-center lg:text-left mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4">
+                        <Users className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-bold text-foreground mb-3">
+                        Join Our Community
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        Create positive change in mental health advocacy.
+                      </p>
+                    </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      <strong>Volunteers:</strong> Join our community events, peer support, and advocacy programs
-                    </span>
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+                        <span className="text-xs text-muted-foreground">
+                          <strong>Volunteers:</strong> Join events & advocacy
+                        </span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+                        <span className="text-xs text-muted-foreground">
+                          <strong>Partners:</strong> Collaborate on initiatives
+                        </span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+                        <span className="text-xs text-muted-foreground">
+                          <strong>Flexible:</strong> All schedules welcome
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      <strong>Partners:</strong> Collaborate on initiatives, sponsorships, and community outreach
-                    </span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      <strong>Flexible:</strong> Opportunities available for all schedules and commitment levels
-                    </span>
+
+                  {/* Image */}
+                  <div className="flex-shrink-0">
+                    <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden shadow-lg">
+                      <img 
+                        src={mentalHealthMattersImage} 
+                        alt="Mental Health Matters" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
