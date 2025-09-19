@@ -51,11 +51,11 @@ export default function Header() {
             data-testid="button-logo"
             aria-label="Go to top"
           >
-            <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg bg-white/50 p-1">
+            <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg bg-white/50 p-1 gentle-float">
               <img 
                 src={logoImage} 
                 alt="Celina's Goodwill Foundation Logo" 
-                className="w-full h-full object-contain rounded-full"
+                className="w-full h-full object-contain rounded-full gentle-breathe"
               />
             </div>
             <span className="text-lg font-bold text-foreground hidden sm:block">Celina's Foundation</span>

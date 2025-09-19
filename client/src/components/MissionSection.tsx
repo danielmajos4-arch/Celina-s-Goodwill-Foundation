@@ -20,7 +20,7 @@ export default function MissionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Mission Statement Card */}
           <div 
-            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer hover-tilt hover-glow gentle-breathe"
             data-testid="card-mission"
           >
             {/* Background Image */}
@@ -35,7 +35,7 @@ export default function MissionSection() {
             {/* Content */}
             <div className="relative z-10 p-6 sm:p-8 md:p-10 h-full flex flex-col justify-end">
               <div className="transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 shimmer-text">
                   MISSION STATEMENT
                 </h3>
                 <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed font-medium">
@@ -47,7 +47,7 @@ export default function MissionSection() {
 
           {/* Vision Statement Card */}
           <div 
-            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+            className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden group cursor-pointer hover-tilt hover-glow gentle-breathe gentle-float-delayed"
             data-testid="card-vision"
           >
             {/* Background Image */}
@@ -62,7 +62,7 @@ export default function MissionSection() {
             {/* Content */}
             <div className="relative z-10 p-6 sm:p-8 md:p-10 h-full flex flex-col justify-end">
               <div className="transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 shimmer-text">
                   VISION STATEMENT
                 </h3>
                 <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed font-medium">
