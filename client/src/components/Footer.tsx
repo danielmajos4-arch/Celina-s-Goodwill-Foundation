@@ -1,5 +1,5 @@
 import { ArrowUp } from 'lucide-react';
-import { SiFacebook, SiTiktok, SiX, SiInstagram } from 'react-icons/si';
+import { SiFacebook, SiTiktok } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import logoImage from '@assets/celina-logo-footer.webp';
 
@@ -156,7 +156,9 @@ export default function Footer() {
               {/* Social Media Icons */}
               <div className="flex space-x-3">
                 <a
-                  href="#"
+                  href="https://web.facebook.com/joyful.healing.hub.301278"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="Facebook - Joyful Healing Hub"
                   data-testid="link-facebook-footer"
@@ -164,28 +166,14 @@ export default function Footer() {
                   <SiFacebook className="w-4 h-4 text-white" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@joyfulhealinghub"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 bg-gray-800 hover:bg-black border border-gray-600 hover:border-white rounded-lg flex items-center justify-center transition-colors"
                   aria-label="TikTok - @joyfulhealinghub"
                   data-testid="link-tiktok-footer"
                 >
                   <SiTiktok className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-gray-800 hover:bg-blue-400 rounded-lg flex items-center justify-center transition-colors"
-                  aria-label="Twitter"
-                  data-testid="link-twitter-footer"
-                >
-                  <SiX className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-gray-800 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center transition-colors"
-                  aria-label="Instagram"
-                  data-testid="link-instagram-footer"
-                >
-                  <SiInstagram className="w-4 h-4 text-white" />
                 </a>
               </div>
 
