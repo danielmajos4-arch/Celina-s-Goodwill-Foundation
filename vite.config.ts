@@ -3,20 +3,21 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
+  root: "client", // 👈 tell Vite where index.html is
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "client/src"),
       "@shared": path.resolve(__dirname, "shared"),
-      "@assets": path.resolve(__dirname, "public/assets"),
+      "@assets": path.resolve(__dirname, "client/public/assets"),
     },
   },
   build: {
-    outDir: "dist", // Vercel expects "dist"
-    emptyOutDir: true, // clean dist before building
+    outDir: "../dist", // go up one level so dist/ is at project root
+    emptyOutDir: true,
   },
   server: {
     port: 3000,
-    open: true, // auto-open browser when running dev
+    open: true,
   },
 });
