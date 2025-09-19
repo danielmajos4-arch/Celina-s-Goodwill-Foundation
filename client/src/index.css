@@ -414,6 +414,21 @@
   animation: ambient-shift 12s ease-in-out infinite;
 }
 
+/* Ambient hero background with image */
+.ambient-hero-bg {
+  position: relative;
+}
+
+.ambient-hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, rgba(59, 130, 246, 0.08), rgba(16, 185, 129, 0.08), rgba(236, 72, 153, 0.08), rgba(59, 130, 246, 0.08));
+  background-size: 400% 400%;
+  animation: ambient-shift 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
 /* Simple fade in */
 .fade-in {
   animation: fade-in 0.8s ease-out forwards;

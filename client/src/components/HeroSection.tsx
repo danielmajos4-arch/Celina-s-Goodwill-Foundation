@@ -16,14 +16,11 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with Ambient Animation */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat ambient-hero-bg"
         style={{ backgroundImage: `url(${heroBackgroundImage})` }}
       />
-      
-      {/* Ambient animated overlay */}
-      <div className="absolute inset-0 ambient-hero" />
       
       {/* Dark Overlay for Text Readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
