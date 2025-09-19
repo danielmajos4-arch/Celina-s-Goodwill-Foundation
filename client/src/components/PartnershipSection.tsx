@@ -1,67 +1,61 @@
 import { useState } from 'react';
-import { HandHeart, Users, Calendar, Mail, Phone, MapPin } from 'lucide-react';
+import { HandHeart, Users, Mail, User, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function PartnershipSection() {
-  const [activeTab, setActiveTab] = useState('volunteer');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    type: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
 
-  const partnershipTypes = [
-    {
-      id: 'volunteer',
-      title: 'Volunteer With Us',
-      icon: HandHeart,
-      description: 'Join our community of dedicated volunteers making a real difference in mental health advocacy',
-      opportunities: [
-        'Peer Support Counselor',
-        'Community Workshop Facilitator', 
-        'Event Coordinator',
-        'Social Media Ambassador',
-        'Administrative Support'
-      ],
-      commitment: 'Flexible scheduling from 4 hours/week',
-      gradient: 'from-blue-600 to-blue-800'
-    },
-    {
-      id: 'partner',
-      title: 'Become a Partner',
-      icon: Users,
-      description: 'Collaborate with us to expand our reach and create sustainable mental health initiatives',
-      opportunities: [
-        'Corporate Sponsorship Programs',
-        'Healthcare Provider Partnerships',
-        'Educational Institution Collaborations',
-        'Community Organization Alliances',
-        'Media and Advocacy Partnerships'
-      ],
-      commitment: 'Customized partnership agreements',
-      gradient: 'from-green-600 to-green-800'
-    },
-    {
-      id: 'professional',
-      title: 'Professional Services',
-      icon: Calendar,
-      description: 'Contribute your professional expertise to strengthen our mental health programs',
-      opportunities: [
-        'Licensed Mental Health Counselors',
-        'Social Workers and Therapists',
-        'Medical Professionals',
-        'Legal Advisors',
-        'Marketing and Communications Specialists'
-      ],
-      commitment: 'Pro-bono or reduced-rate services',
-      gradient: 'from-pink-600 to-pink-800'
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.type || !formData.message) {
+      setStatus('error');
+      setMessage('Please fill in all fields.');
+      return;
     }
-  ];
 
-  const handleContactClick = (type: string) => {
-    console.log(`Contact form opened for: ${type}`);
-    // TODO: Implement contact form modal
+    setStatus('loading');
+    
+    try {
+      // TODO: Replace with actual form submission
+      console.log('Partnership form submission:', formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setStatus('success');
+      setMessage('Thank you for your interest! We\'ll get back to you soon.');
+      setFormData({ name: '', email: '', type: '', message: '' });
+    } catch (error) {
+      setStatus('error');
+      setMessage('Something went wrong. Please try again.');
+    }
+
+    // Reset status after 5 seconds
+    setTimeout(() => {
+      setStatus('idle');
+      setMessage('');
+    }, 5000);
   };
 
   return (
     <section id="partnership" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
@@ -81,102 +75,166 @@ export default function PartnershipSection() {
           </p>
         </div>
 
-        {/* Partnership Types Tabs */}
-        <div className="flex flex-col lg:flex-row justify-center mb-8 space-y-4 lg:space-y-0 lg:space-x-4">
-          {partnershipTypes.map((type) => (
-            <button
-              key={type.id}
-              onClick={() => setActiveTab(type.id)}
-              className={`flex items-center justify-center space-x-3 px-4 sm:px-6 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
-                activeTab === type.id
-                  ? `bg-gradient-to-r ${type.gradient} text-white shadow-lg transform scale-105`
-                  : 'bg-white text-muted-foreground hover:bg-gray-50 border border-gray-200'
-              }`}
-              data-testid={`tab-${type.id}`}
-            >
-              <type.icon className="w-5 h-5" />
-              <span>{type.title}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Active Tab Content */}
-        {partnershipTypes.map((type) => (
-          <div
-            key={type.id}
-            className={`transition-all duration-500 ${
-              activeTab === type.id ? 'opacity-100 block' : 'opacity-0 hidden'
-            }`}
-          >
-            <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
-              <CardContent className="p-6 sm:p-8 md:p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  {/* Content */}
-                  <div>
-                    <div className={`w-20 h-20 bg-gradient-to-r ${type.gradient} rounded-full flex items-center justify-center mb-6`}>
-                      <type.icon className="w-10 h-10 text-white" />
-                    </div>
-                    
-                    <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                      {type.title}
-                    </h3>
-                    
-                    <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-                      {type.description}
-                    </p>
-
-                    <div className="mb-8">
-                      <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-4">
-                        Opportunities Available:
-                      </h4>
-                      <ul className="space-y-3">
-                        {type.opportunities.map((opportunity, index) => (
-                          <li key={index} className="flex items-start">
-                            <div className={`w-2 h-2 bg-gradient-to-r ${type.gradient} rounded-full mt-2 mr-3 flex-shrink-0`} />
-                            <span className="text-muted-foreground">{opportunity}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="mb-8">
-                      <span className="text-sm font-medium text-muted-foreground">
-                        Commitment Level: {type.commitment}
-                      </span>
-                    </div>
-
-                    <Button
-                      onClick={() => handleContactClick(type.id)}
-                      className={`w-full sm:w-auto bg-gradient-to-r ${type.gradient} hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300`}
-                      size="lg"
-                      data-testid={`button-${type.id}-contact`}
-                    >
-                      Get Started Today
-                    </Button>
+        {/* Contact Form */}
+        <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
+          <CardContent className="p-6 sm:p-8 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              
+              {/* Form Section */}
+              <div>
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center mr-4">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
-
-                  {/* Visual Element */}
-                  <div className="relative">
-                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl p-8 relative overflow-hidden">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${type.gradient} opacity-5`} />
-                      <div className="relative z-10 text-center">
-                        <type.icon className="w-24 h-24 text-gray-400 mx-auto mb-6" />
-                        <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
-                          Ready to Make an Impact?
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Your contribution, no matter how big or small, creates ripple effects 
-                          of positive change in mental health advocacy.
-                        </p>
-                      </div>
-                    </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Get in Touch</h3>
+                    <p className="text-muted-foreground">Tell us how you'd like to contribute</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
 
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Label htmlFor="partner-name" className="text-sm font-medium text-foreground">
+                      Full Name *
+                    </Label>
+                    <div className="mt-2 relative">
+                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <Input
+                        id="partner-name"
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange('name', e.target.value)}
+                        placeholder="Enter your full name"
+                        className="pl-10"
+                        data-testid="input-partner-name"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="partner-email" className="text-sm font-medium text-foreground">
+                      Email Address *
+                    </Label>
+                    <div className="mt-2 relative">
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <Input
+                        id="partner-email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange('email', e.target.value)}
+                        placeholder="Enter your email address"
+                        className="pl-10"
+                        data-testid="input-partner-email"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="partner-type" className="text-sm font-medium text-foreground">
+                      Interest Type *
+                    </Label>
+                    <div className="mt-2">
+                      <Select value={formData.type} onValueChange={(value) => handleInputChange('type', value)}>
+                        <SelectTrigger data-testid="select-partner-type">
+                          <SelectValue placeholder="Select your interest" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="volunteer">I want to volunteer</SelectItem>
+                          <SelectItem value="partner">I want to partner with you</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="partner-message" className="text-sm font-medium text-foreground">
+                      Message *
+                    </Label>
+                    <div className="mt-2 relative">
+                      <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
+                      <Textarea
+                        id="partner-message"
+                        value={formData.message}
+                        onChange={(e) => handleInputChange('message', e.target.value)}
+                        placeholder="Tell us about your interest, skills, or how you'd like to contribute..."
+                        rows={4}
+                        className="pl-10 resize-none"
+                        data-testid="textarea-partner-message"
+                      />
+                    </div>
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white py-4 text-lg font-semibold disabled:opacity-50"
+                    data-testid="button-partner-submit"
+                  >
+                    {status === 'loading' ? (
+                      <div className="flex items-center justify-center">
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3" />
+                        Sending...
+                      </div>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </Button>
+                </form>
+
+                {message && (
+                  <div 
+                    className={`mt-6 p-4 rounded-lg text-center ${
+                      status === 'success' 
+                        ? 'bg-green-100 border border-green-200 text-green-700'
+                        : 'bg-red-100 border border-red-200 text-red-700'
+                    }`}
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {message}
+                  </div>
+                )}
+              </div>
+
+              {/* Info Section */}
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-foreground mb-4">
+                    Join Our Community
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Your contribution, no matter how big or small, creates ripple effects 
+                    of positive change in mental health advocacy.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">
+                      <strong>Volunteers:</strong> Join our community events, peer support, and advocacy programs
+                    </span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">
+                      <strong>Partners:</strong> Collaborate on initiatives, sponsorships, and community outreach
+                    </span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mt-2 mr-3 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">
+                      <strong>Flexible:</strong> Opportunities available for all schedules and commitment levels
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
