@@ -60,7 +60,7 @@ export default function PartnershipSection() {
   };
 
   return (
-    <section id="partnership" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <section id="partnership" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -69,13 +69,13 @@ export default function PartnershipSection() {
               <HandHeart className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Partnerships & Volunteers Are{' '}
             <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
               Highly Welcome
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Together, we can break mental health stigma and create lasting change. Whether you're an individual, 
             organization, or professional, there's a meaningful way for you to contribute.
           </p>
@@ -87,7 +87,7 @@ export default function PartnershipSection() {
             <button
               key={type.id}
               onClick={() => setActiveTab(type.id)}
-              className={`flex items-center space-x-3 px-6 py-4 rounded-full font-semibold transition-all duration-300 ${
+              className={`flex items-center justify-center space-x-3 px-4 sm:px-6 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === type.id
                   ? `bg-gradient-to-r ${type.gradient} text-white shadow-lg transform scale-105`
                   : 'bg-white text-muted-foreground hover:bg-gray-50 border border-gray-200'
@@ -109,7 +109,7 @@ export default function PartnershipSection() {
             }`}
           >
             <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
-              <CardContent className="p-8 md:p-12">
+              <CardContent className="p-6 sm:p-8 md:p-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   {/* Content */}
                   <div>
@@ -117,16 +117,16 @@ export default function PartnershipSection() {
                       <type.icon className="w-10 h-10 text-white" />
                     </div>
                     
-                    <h3 className="text-3xl font-bold text-foreground mb-4">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                       {type.title}
                     </h3>
                     
-                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                    <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
                       {type.description}
                     </p>
 
                     <div className="mb-8">
-                      <h4 className="text-xl font-semibold text-foreground mb-4">
+                      <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-4">
                         Opportunities Available:
                       </h4>
                       <ul className="space-y-3">
@@ -147,7 +147,7 @@ export default function PartnershipSection() {
 
                     <Button
                       onClick={() => handleContactClick(type.id)}
-                      className={`bg-gradient-to-r ${type.gradient} hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300`}
+                      className={`w-full sm:w-auto bg-gradient-to-r ${type.gradient} hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300`}
                       size="lg"
                       data-testid={`button-${type.id}-contact`}
                     >
@@ -161,7 +161,7 @@ export default function PartnershipSection() {
                       <div className={`absolute inset-0 bg-gradient-to-br ${type.gradient} opacity-5`} />
                       <div className="relative z-10 text-center">
                         <type.icon className="w-24 h-24 text-gray-400 mx-auto mb-6" />
-                        <h4 className="text-2xl font-bold text-foreground mb-4">
+                        <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
                           Ready to Make an Impact?
                         </h4>
                         <p className="text-muted-foreground leading-relaxed">
