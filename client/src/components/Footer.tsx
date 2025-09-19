@@ -1,6 +1,7 @@
-import { Heart, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { SiFacebook, SiTiktok, SiX, SiInstagram } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
+import logoImage from '@assets/celina-logo-footer.webp';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -20,29 +21,33 @@ export default function Footer() {
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="py-12 sm:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
             {/* Left Side - Foundation Info */}
             <div className="lg:col-span-5">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-pink-500 rounded-full flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-white" />
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-white/10 p-1">
+                  <img 
+                    src={logoImage} 
+                    alt="Celina's Goodwill Foundation Logo" 
+                    className="w-full h-full object-contain rounded-full"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold">Celina's Goodwill Foundation</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">Celina's Goodwill Foundation</h3>
               </div>
               
-              <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-                Breaking mental health stigma through compassion, advocacy, and community support across Nigeria and beyond.
+              <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-md">
+                Breaking mental health stigma through compassion and community support.
               </p>
             </div>
 
             {/* Right Side - Link Columns */}
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                 {/* Quick Links */}
                 <div>
-                  <h4 className="text-white font-semibold mb-6">Quick Links</h4>
-                  <ul className="space-y-4">
+                  <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+                  <ul className="space-y-3">
                     <li>
                       <button
                         onClick={() => scrollToSection('story')}
@@ -58,7 +63,7 @@ export default function Footer() {
                         className="text-gray-400 hover:text-white transition-colors text-sm"
                         data-testid="footer-link-mission"
                       >
-                        Mission & Vision
+                        Mission
                       </button>
                     </li>
                     <li>
@@ -70,68 +75,20 @@ export default function Footer() {
                         Get Involved
                       </button>
                     </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection('contact')}
-                        className="text-gray-400 hover:text-white transition-colors text-sm"
-                        data-testid="footer-link-contact"
-                      >
-                        Contact
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* About */}
-                <div>
-                  <h4 className="text-white font-semibold mb-6">About</h4>
-                  <ul className="space-y-4">
-                    <li>
-                      <button
-                        onClick={() => scrollToSection('story')}
-                        className="text-gray-400 hover:text-white transition-colors text-sm"
-                        data-testid="footer-link-about-story"
-                      >
-                        About us
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection('mission')}
-                        className="text-gray-400 hover:text-white transition-colors text-sm"
-                        data-testid="footer-link-about-mission"
-                      >
-                        Our Mission
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection('partnership')}
-                        className="text-gray-400 hover:text-white transition-colors text-sm"
-                        data-testid="footer-link-about-impact"
-                      >
-                        Our Impact
-                      </button>
-                    </li>
-                    <li>
-                      <span className="text-gray-400 text-sm">
-                        Community
-                      </span>
-                    </li>
                   </ul>
                 </div>
 
                 {/* Support */}
                 <div>
-                  <h4 className="text-white font-semibold mb-6">Support</h4>
-                  <ul className="space-y-4">
+                  <h4 className="text-white font-semibold mb-4">Support</h4>
+                  <ul className="space-y-3">
                     <li>
                       <button
                         onClick={() => scrollToSection('contact')}
                         className="text-gray-400 hover:text-white transition-colors text-sm"
                         data-testid="footer-link-support-contact"
                       >
-                        Contact us
+                        Contact Us
                       </button>
                     </li>
                     <li>
@@ -142,20 +99,6 @@ export default function Footer() {
                       >
                         Get Help
                       </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection('partnership')}
-                        className="text-gray-400 hover:text-white transition-colors text-sm"
-                        data-testid="footer-link-support-partnership"
-                      >
-                        Partnership
-                      </button>
-                    </li>
-                    <li>
-                      <span className="text-gray-400 text-sm">
-                        Resources
-                      </span>
                     </li>
                   </ul>
                 </div>
